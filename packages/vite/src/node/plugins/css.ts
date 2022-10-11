@@ -381,7 +381,7 @@ export function cssPostPlugin(config: ResolvedConfig): Plugin {
         const cssContent = await getContentWithSourcemap(css)
         const devBase = config.base
         const code = [
-          `import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle } from ${JSON.stringify(
+          `import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle, use, unuse } from ${JSON.stringify(
             path.posix.join(devBase, CLIENT_PUBLIC_PATH)
           )}`,
           `const __vite__id = ${JSON.stringify(id)}`,
