@@ -58,11 +58,7 @@ function invalidateSSRModule(mod: ModuleNode, seen: Set<ModuleNode>) {
   mod.importers.forEach((importer) => invalidateSSRModule(importer, seen))
 }
 
-export type ResolvedUrl = [
-  url: string,
-  resolvedId: string,
-  meta: object | null | undefined
-]
+export type ResolvedUrl = any
 
 export class ModuleGraph {
   urlToModuleMap = new Map<string, ModuleNode>()
